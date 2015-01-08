@@ -9,7 +9,7 @@ If you have time, we encourage you to also set up R and RStudio locally on your 
 
 Suggested steps (which work for Windows, Mac, or Linux users):
 
-(1) download and peruse the first few chapters of the "Start Teaching using R" vignette available at http://cran.r-project.org/web/packages/mosaic/:index.html  
+(1) download and peruse the first few chapters of the "Start Teaching using R" vignette available at http://cran.r-project.org/web/packages/mosaic/index.html  
 
 Don't print it, we'll be bringing copies to the Minicourse.
 
