@@ -439,3 +439,28 @@ passwd:  d326266e
 ===
 ywu1@csustan.edu
 ===
+
+
+Here is your login information for RStudio.
+
+url: http://104.237.138.79:8787
+
+userid:  nhorton
+
+passwd:  *****
+
+===
+nhorton@amherst.edu
+===
+
+Here is your login information for RStudio.
+
+url: http://104.237.138.79:8787
+
+userid:  rpruim
+
+passwd:  *****
+
+===
+rpruim@gmail.com
+===
