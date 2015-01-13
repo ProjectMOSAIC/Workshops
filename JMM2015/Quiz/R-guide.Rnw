@@ -1,0 +1,152 @@
+%% Author: Daniel Kaplan
+%% Subject: R basics
+%% Title: Study Guide to R Basics
+
+% !Rnw weave = knitr
+
+\documentclass[10pt]{article}
+\usepackage{fancyhdr}
+\usepackage{graphicx, verbatim}
+\setlength{\textwidth}{6.5in} 
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0in} 
+\setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0cm}
+
+\pagestyle{fancy}
+
+\lhead{\textsc{Prof. Horton}}
+\chead{\textsc{STAT 135: \texttt{R} Study Guide}}
+\rhead{\textsc{Fall 2014}}
+\lfoot{}
+\cfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0.0pt}
+
+
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+
+%\newcommand{\TextEntry}{\vspace*{0in}}
+<<error=FALSE,warning=FALSE,message=FALSE,echo=FALSE,results="hide">>=
+require(mosaicData,quietly=TRUE)
+require(mosaic,quietly=TRUE)
+require(knitr)
+opts_chunk$set(fig.width=5, fig.height=2.5)
+trellis.par.set(theme=col.mosaic())  # get a better color scheme for lattice
+@
+
+\begin{enumerate}
+  \item Given numerical objects named \texttt{x} and \texttt{y}, calculate this quantity:$ \sqrt{x^2 + y}$ 
+<<results="hide",eval=FALSE>>=
+sqrt(x^2 + y)
+@
+
+\item
+Load the \texttt{mosaic} and \texttt{mosaicData} packages.  (We will be using the 
+\texttt{CPS85} data set from \texttt{mosaicData} for our subsequent examples.)
+<<>>=
+require(mosaic)
+require(mosaicData)
+@
+%  \item Load the data set named ``CPS85" (available through the \texttt{mosaicData} %package), and assign it to an object called \texttt{CPS85}.
+%<<message=FALSE,results="hide">>=
+%# Remember the quotes around the name of the data set
+%CPS85 = fetchData("CPS85")
+%@
+
+\item Display the first few rows of the \texttt{CPS85} data frame.
+
+
+<<message=FALSE,results="hide">>=
+head(CPS85)
+@
+
+\item Display the names of the variables from the data frame.
+
+<<message=FALSE,results="hide">>=
+names(CPS85)
+@
+
+
+\item Calculate (not count by hand!) the number of cases in the data frame.
+
+<<message=FALSE,results="hide">>=
+nrow(CPS85)
+@
+
+
+\item Calculate the mean wage of all the people.
+
+<<message=FALSE,results="hide">>=
+mean(~ wage, data=CPS85)           
+@
+
+\item Calculate the standard deviation of wage for all cases.
+
+<<message=FALSE,results="hide">>=
+sd(~ wage, data=CPS85)
+@
+
+\item Calculate the mean wage separately for married and unmarried people.
+
+<<message=FALSE,results="hide">>=
+mean(wage ~ married, data=CPS85)
+@
+
+\item Create a new variable, \texttt{fraction}, in the data frame that holds the ratio of the person's ``experience" to their age. 
+
+
+<<message=FALSE,results="hide">>=
+CPS85 <- mutate(CPS85, fraction=exper/age)
+CPS85 <- CPS85 %>% mutate(fraction = exper/age)
+@
+
+\item Make a box-and-whisker plot of all the people's CPS85.
+
+<<message=FALSE, fig.keep='none'>>=
+bwplot(~wage, data=CPS85)
+@
+
+\newpage
+\item Make a box-and-whisker plot of the people's wage, but broken down 
+by marital status.
+
+
+<<message=FALSE,results="hide">>=
+bwplot(wage ~ married, data=CPS85)
+@
+
+\item Make this plot:
+
+<<echo=FALSE>>=
+densityplot(~ age, groups=married, auto.key=TRUE, data=CPS85)
+@
+
+<<message=FALSE,results="hide",fig.keep="none">>=
+densityplot(~ age, groups=married, auto.key=TRUE, data=CPS85)
+@
+What is different when the command {\tt densityplot( $\sim$ age | married, data=CPS85)} is run?
+
+%<<>>=
+%densityplot(~ age | married, data=CPS85) 
+%@
+\item Calculate (not count by hand!) the number of people by marital status.
+
+<<message=FALSE,results="hide">>=
+tally(~ married, data=CPS85) 
+@
+
+\item Calculate (not count by hand!) the number of people by marital status and sex simultaneously.
+
+
+<<message=FALSE,results="hide">>=
+tally(~ married + sex, data=CPS85)
+@
+
+\end{enumerate}
+
+\end{document}

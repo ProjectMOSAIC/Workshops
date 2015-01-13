@@ -43,8 +43,10 @@ output: html_document
 
 ## Monday Morning
 
+### Warm-up
+  * 
 ### Using RMarkdown [Nick]
-  * could start this on Saturday if things go quickly
+  * 
   
 ### Resampling and Bootstrap
   * Hypothesis testing
