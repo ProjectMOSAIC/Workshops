@@ -1,0 +1,254 @@
+%% Author: Daniel Kaplan
+%% Subject: R basics
+%% Title: Study Guide to R Basics
+
+% !Rnw weave = knitr
+
+\documentclass[10pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+\usepackage{fancyhdr}
+\usepackage{graphicx, verbatim}
+\setlength{\textwidth}{6.5in} 
+\setlength{\textheight}{9in}
+\setlength{\oddsidemargin}{0in} 
+\setlength{\evensidemargin}{0in}
+\setlength{\topmargin}{0cm}
+
+\pagestyle{fancy}
+
+\lhead{\textsc{Prof. Horton}}
+\chead{\textsc{STAT 135: \texttt{R} Study Guide}}
+\rhead{\textsc{Fall 2014}}
+\lfoot{}
+\cfoot{}
+\cfoot{\thepage}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{0.0pt}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+%\SweaveOpts{concordance=TRUE}
+
+
+%\newcommand{\TextEntry}{\vspace*{0in}}
+
+
+\begin{enumerate}
+  \item Given numerical objects named \texttt{x} and \texttt{y}, calculate this quantity:$ \sqrt{x^2 + y}$ 
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{sqrt}\hlstd{(x}\hlopt{^}\hlnum{2} \hlopt{+} \hlstd{y)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\item
+Load the \texttt{mosaic} and \texttt{mosaicData} packages.  (We will be using the 
+\texttt{CPS85} data set from \texttt{mosaicData} for our subsequent examples.)
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{require}\hlstd{(mosaic)}
+\hlkwd{require}\hlstd{(mosaicData)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+%  \item Load the data set named ``CPS85" (available through the \texttt{mosaicData} %package), and assign it to an object called \texttt{CPS85}.
+%<<message=FALSE,results="hide">>=
+%# Remember the quotes around the name of the data set
+%CPS85 = fetchData("CPS85")
+%@
+
+\item Display the first few rows of the \texttt{CPS85} data frame.
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{head}\hlstd{(CPS85)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\item Display the names of the variables from the data frame.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{names}\hlstd{(CPS85)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\item Calculate (not count by hand!) the number of cases in the data frame.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{nrow}\hlstd{(CPS85)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+
+\item Calculate the mean wage of all the people.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{mean}\hlstd{(}\hlopt{~} \hlstd{wage,} \hlkwc{data}\hlstd{=CPS85)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\item Calculate the standard deviation of wage for all cases.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{sd}\hlstd{(}\hlopt{~} \hlstd{wage,} \hlkwc{data}\hlstd{=CPS85)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\item Calculate the mean wage separately for married and unmarried people.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{mean}\hlstd{(wage} \hlopt{~} \hlstd{married,} \hlkwc{data}\hlstd{=CPS85)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\item Create a new variable, \texttt{fraction}, in the data frame that holds the ratio of the person's ``experience" to their age. 
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlstd{CPS85} \hlkwb{<-} \hlkwd{mutate}\hlstd{(CPS85,} \hlkwc{fraction}\hlstd{=exper}\hlopt{/}\hlstd{age)}
+\hlstd{CPS85} \hlkwb{<-} \hlstd{CPS85} \hlopt{%>%} \hlkwd{mutate}\hlstd{(}\hlkwc{fraction} \hlstd{= exper}\hlopt{/}\hlstd{age)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\item Make a box-and-whisker plot of all the people's CPS85.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{bwplot}\hlstd{(}\hlopt{~}\hlstd{wage,} \hlkwc{data}\hlstd{=CPS85)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\newpage
+\item Make a box-and-whisker plot of the people's wage, but broken down 
+by marital status.
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{bwplot}\hlstd{(wage} \hlopt{~} \hlstd{married,} \hlkwc{data}\hlstd{=CPS85)}
+\end{alltt}
+\end{kframe}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-12} 
+
+\end{knitrout}
+
+\item Make this plot:
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}
+\includegraphics[width=\maxwidth]{figure/unnamed-chunk-13} 
+
+\end{knitrout}
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{densityplot}\hlstd{(}\hlopt{~} \hlstd{age,} \hlkwc{groups}\hlstd{=married,} \hlkwc{auto.key}\hlstd{=}\hlnum{TRUE}\hlstd{,} \hlkwc{data}\hlstd{=CPS85)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+What is different when the command {\tt densityplot( $\sim$ age | married, data=CPS85)} is run?
+
+%<<>>=
+%densityplot(~ age | married, data=CPS85) 
+%@
+\item Calculate (not count by hand!) the number of people by marital status.
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{tally}\hlstd{(}\hlopt{~} \hlstd{married,} \hlkwc{data}\hlstd{=CPS85)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\item Calculate (not count by hand!) the number of people by marital status and sex simultaneously.
+
+
+\begin{knitrout}
+\definecolor{shadecolor}{rgb}{0.969, 0.969, 0.969}\color{fgcolor}\begin{kframe}
+\begin{alltt}
+\hlkwd{tally}\hlstd{(}\hlopt{~} \hlstd{married} \hlopt{+} \hlstd{sex,} \hlkwc{data}\hlstd{=CPS85)}
+\end{alltt}
+\end{kframe}
+\end{knitrout}
+
+\end{enumerate}
+
+\end{document}

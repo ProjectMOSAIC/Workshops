@@ -1,0 +1,37 @@
+---
+title: 'Welcome to Minicourse #14'
+author: "Teaching Statistics with R and RStudio"
+date: "January 10, 2015"
+output: slidy_presentation
+---
+
+
+## Welcome to Minicourse 14
+
+**Minicourse Web Page**
+
+* [mosaic-web.org/from-meetings-workshops/jmm-2015-minicourse/](http://mosaic-web.org/from-meetings-workshops/jmm-2015-minicourse/)
+
+**While we are waiting...**
+
+ * Introduce yourself to your neighbor.
+ * If you are an R novice and both of your nearest neighbors are R novices too, one of you should move.
+ * If you are quite comfortable with R and both of your nearest neighbors are too, one of you should move.
+
+**Try out the FREE INTERNET** and login to the RStudio server, crossing your fingers that it will support 35 users...
+
+## Outline of the Day
+
+ * RStudio Quick start
+ * Less Volume, More Creativity -- Getting started with the mosaic package
+ * Creating documents with R Markdown (if time)
+ 
+## Other SIGMAA Stat Ed Stuff...
+
+  * Contributed Paper Sessions (Intro Stats)
+  * Contributed Paper Sessions (Other Stats)
+  * Business Meeting Sunday Night (5:30-7:30)
+    * reception, awards,
+    * Hadley Wickham (RStudio, Rice) will present on "Reactive documents for teaching"
+  
+All these events are in **Room 211**.  When you don't know what to do, go there ;-)  
