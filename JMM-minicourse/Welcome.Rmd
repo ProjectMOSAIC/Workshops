@@ -1,37 +1,67 @@
 ---
-title: 'Welcome to Minicourse #14'
+title: 'Welcome to Minicourse #15'
 author: "Teaching Statistics with R and RStudio"
-date: "January 10, 2015"
-output: slidy_presentation
+date: "January, 2016"
+output: ioslides_presentation
 ---
 
+## Welcome to Minicourse 15
 
-## Welcome to Minicourse 14
+### **Minicourse Web Page**
 
-**Minicourse Web Page**
+  * [mosaic-web.org/from-meetings-workshops/jmm-2016-minicourse/](http://mosaic-web.org/from-meetings-workshops/jmm-2016-minicourse/)
 
-* [mosaic-web.org/from-meetings-workshops/jmm-2015-minicourse/](http://mosaic-web.org/from-meetings-workshops/jmm-2015-minicourse/)
+### **While we are waiting...**
 
-**While we are waiting...**
+  * **Introduce yourself** to your neighbor(s).
+ 
+    * If you are an R novice and both of your nearest neighbors are R novices too, one of you should move.
+ 
+    * If you are quite comfortable with R and both of your nearest neighbors are too, one of you should move.
 
- * Introduce yourself to your neighbor.
- * If you are an R novice and both of your nearest neighbors are R novices too, one of you should move.
- * If you are quite comfortable with R and both of your nearest neighbors are too, one of you should move.
+  * **Try out the FREE INTERNET** and login to the RStudio server
+     -- [rstudio.calvin.edu](rstudio.calvin.edu) --
+     I have a username and password for you.
 
-**Try out the FREE INTERNET** and login to the RStudio server, crossing your fingers that it will support 35 users...
+
 
 ## Outline of the Day
 
- * RStudio Quick start
- * Less Volume, More Creativity -- Getting started with the mosaic package
- * Creating documents with R Markdown (if time)
+  1. Introduction
+  
+  1. RStudio Quick start
+ 
+  2. Less Volume, More Creativity 
+ 
+    * Getting started with the mosaic package
+    * An approach that can be used in other contexts as well
+   
+  3. Creating documents with R Markdown (if time)
  
 ## Other SIGMAA Stat Ed Stuff...
 
-  * Contributed Paper Sessions (Intro Stats)
-  * Contributed Paper Sessions (Other Stats)
-  * Business Meeting Sunday Night (5:30-7:30)
-    * reception, awards,
-    * Hadley Wickham (RStudio, Rice) will present on "Reactive documents for teaching"
+### **Contributed Paper Sessions** -- *Yakima 1*
+
+  * 2:15 - 5:55 Wed -- Intro Stats
+  * 1:00 - 4:15 Thur -- Intro Stats
+  * 1:00 - 2:35 Fri -- Other Stats
+    
+### **Panel Discussion on Guidelines for Stat Ed** -- *Room 609*
+
+ * 8:00 - 9:20 Fri
+    
+### **Business Meeting** (Thur, 5:30, 6:00, 6:50) -- *Yakima 1*
+
+  * reception, awards, business meeting, door prizes
+  * Tim Hesterberg (Google) will present on 
+  "Big data, experiments, and resampling at Google"
+
+## Introductions
+
+  * **Randy Pruim**, Calvin College
   
-All these events are in **Room 211**.  When you don't know what to do, go there ;-)  
+  * **Tim Hesterberg**, Google
+  
+  * **Katie Kinnaird**, Maclester College
+  
+  
