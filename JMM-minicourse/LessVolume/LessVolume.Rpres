@@ -1,8 +1,9 @@
 Less Volume, More Creativity
 =============================
 author: Teaching Statistics with R and RStudio 
-date: JMM 2015 Minicourse
+date: JMM 2016 Minicourse
 transition: fade
+autosize: true
 
 <!--
 %\VignetteEngine{knitr::knitr}
@@ -26,7 +27,7 @@ border:0px;
 }
 </style>
 
-Project MOSAIC and the `mosaic` package
+Project MOSAIC and the mosaic package
 ===========================
 
 NSF-funded project to develop a new way to introduce mathematics, statistics, computation 
@@ -35,7 +36,7 @@ and modeling to students in colleges and universities.
  * more information at [mosaic-web.org](http://mosaic-web.org)
  
  * the `mosaic` package is available via 
-     * [CRAN](http://cran.r-project.org/web/packages/mosaic/index.html)
+     * [CRAN](http://cran.r-project.org/package=mosaic)
      * [github](https://github.com/rpruim/mosaic) 
          * updates more frequently than CRAN
          * beta branch for developing new features
@@ -57,6 +58,12 @@ is great.
    * no need to know HTML, LateX or Word
    
    * but if you do, you can take advantage
+
+Less Volume, More Creativity
+================================
+type: section
+
+A guiding philosphy
 
 Less Volume, More Creativity
 ================================
@@ -98,21 +105,25 @@ Mike McCarthy, Head Coach, Green Bay Packers
 </tr>
 </table>
 
-                                          
-SIBKIS: See It Big, Keep It Simple
-=======================
+Less Volume, More Creativity
+=============================
 
-<table>
-<tr>
-<td>
-Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away. 
+
+<table><tr align="top"><td width="20%" align="top">
+<img src="../../images/MikeMcCarthy.jpg" align="top" width="200"></td>
+<td align="top"> 
+<strong>Q.</strong> How many offensive and defensive plays might you have coming into a game on average?
 <br><br>
---- Antoine de Saint-Exupery (writer, poet, pioneering aviator)
+<strong>A.</strong> That's an excellent question because years ago when I first got into 
+the NFL we had 150 passes in our game plan. I've put a sign on all of the coordinators' doors -- <strong>Less Volume, More Creativity</strong>. 
+We function with more concepts with less volume. 
+We're more around 50 (passes) in a game plan [now].
+<br><br>
+Mike McCarthy, Head Coach, Green Bay Packers 
 </td>
-<td width="20%"> 
-<img src="../../images/SaintExupery.jpg">
 </tr>
 </table>
+
 
 Less Volume, More Creativity
 =================
@@ -143,34 +154,72 @@ by
 * The Minimal R goal
 
 Note: We treat R as a language, but **not a programming language**: 
-* R is a way to communicate to the computer
+* R is a way to communicate with the computer
+
+                                          
+SIBKIS: See It Big, Keep It Simple
+=======================
+
+<table>
+<tr>
+<td>
+Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away. 
+<br><br>
+--- Antoine de Saint-Exupery (writer, poet, pioneering aviator)
+</td>
+<td width="20%"> 
+<img src="../../images/SaintExupery.jpg">
+</tr>
+</table>
+
+An Introduction to RStudio
+====================
+type: section
+
+Before continuing, let's get acquainted with RStudio's 
+panes and tabs.
 
 A few little details
 ====================
 
 ### R is case sensitive
  * many students are *not* case sensitive
+ 
+### Amount of white space doesn't matter
+  * Use white space liberally to make code clearer
 
 ### Arrows and Tab
  * up/down arrows scroll through history
  * TAB completion can simplify typing
 
-### If all else fails, try ESC
+### If all else fails, use ESC to get back to command prompt
  * If you see a + prompt, it means R is waiting for more input
  * If this is unintentional, you probably have a typo
- * ESC will get you pack to the command prompt
 
-Make sure the mosaic and mosaicData packages are loaded
+The Most Important Template
+===========================
+type: section
+
+Make sure the mosaic package is loaded
 =======================================================
 
- * happens automatically on our RStudio server
- * use checkboxes in Packages tab to load/unload packages
- * packages can also be loaded from the command line
+ * happens **automatically on our RStudio server**
+ * use **checkboxes in Packages tab** to load/unload packages
+ * packages can also be loaded from the **command line**
  
 ```{r}
-require(mosaic)
-require(mosaicData)
+require(mosaic)  
 ```
+
+
+<br>
+Note: R purists might prefer 
+
+```{r}
+library(mosaic)
+```
+
+but `require()` is easier for novices to remember.
 
 The Most Important Template
 ===============================
@@ -371,12 +420,13 @@ Graphical Summaries: Overview
 
 ### One Variable
 ```{r eval = FALSE, tidy = FALSE}
-  histogram( ~age, data = HELPrct ) 
-densityplot( ~age, data = HELPrct ) 
-     bwplot( ~age, data = HELPrct ) 
-     qqmath( ~age, data = HELPrct ) 
-freqpolygon( ~age, data = HELPrct ) 
-   bargraph( ~sex, data = HELPrct )
+  histogram( ~ age, data = HELPrct) 
+densityplot( ~ age, data = HELPrct) 
+     bwplot( ~ age, data = HELPrct) 
+     qqmath( ~ age, data = HELPrct) 
+freqpolygon( ~ age, data = HELPrct) 
+    ashplot( ~ age, data = HELPrct)
+   bargraph( ~ sex, data = HELPrct)
 ```
 
 ### Two Variables
@@ -580,11 +630,17 @@ bwplot( age ~ sex, data = HELPrct )
     coef(lm( age ~ sex, data = HELPrct ))
 ```
 
+A Sampler of Some Other Things
+===========
+type: section
+
 Some other things
 =================
+
 The `mosaic` package includes some other things, too
- * Data sets (you've already seen some of them)
- * xtras: `xchisq.test()`, `xpnorm()`, `xqqmath()`
+ * **Data sets** (you've already seen some of them)
+ * support for **simulation based inference** (`do()`)
+ * **xtras**: `xchisq.test()`, `xpnorm()`, `xqqmath()`
  * `mplot()` 
    * `mplot(HELPrct)` interactive plot creation
    * replacements for `plot()` in some situations
@@ -659,10 +715,15 @@ plotFun( Width(length, sex = "G") ~ length,
 trellis.par.set(theme = col.mosaic())
 ```
 
-Resampling -- You can do() it!
-==============================
+Simulation-Based Inference with mosaic
+===============
+type: section
 
-## Lady Tasting Tea
+<large>You can do() it!</large>
+
+
+The Lady Tasting Tea
+==============================
 
  * Often used on first day of class
  
@@ -672,7 +733,10 @@ Resampling -- You can do() it!
    has been poured into tea or vice versa.
    
    * Question: How do we test this claim?
-   
+
+ * Can replace with any test of a proportion 
+ 
+   * fair coin, Dorris and Buzz, multiple-choice guessing, ESP, ...
 ```{r echo = FALSE }
 require(mosaic)
 trellis.par.set(theme = col.mosaic())
@@ -778,8 +842,9 @@ Example: Do mean ages differ by sex?
 ====================================
 
 ```{r fig.width = 8, fig.height = 3, out.width = 800, out.height = 300}
-prop( ~(abs(diffmean) > 0.7841), data = Null )
-histogram(~ diffmean, data = Null, v = -.7841) 
+2 * prop( ~ (diffmean <= -0.7841), data = Null)
+2 * prop1( ~ (diffmean <= -0.7841), data = Null)
+histogram( ~ diffmean, data = Null, v = -.7841) 
 ```
 
 Example:  Bootstrap for difference in means
@@ -787,16 +852,16 @@ Example:  Bootstrap for difference in means
 
 ```{r fig.width = 8, fig.height = 3, out.width = 800, out.height = 300}
 Bootstrap <- do(5000) * 
-  diffmean(age~sex, data= resample(HELPrct))
+  diffmean(age ~ sex, data= resample(HELPrct))
 
-histogram( ~diffmean, data = Bootstrap, 
+histogram( ~ diffmean, data = Bootstrap, 
                       v = -.7841, glwd = 4 )
 ```
 
 Example:  CI for difference in mean ages
 ========================================
 ```{r}
-cdata(~diffmean, data = Bootstrap, p = .95)
+cdata( ~ diffmean, data = Bootstrap, p = .95)
 confint(Bootstrap, method = "quantile")
 ```
 
@@ -811,7 +876,7 @@ Randomization and linear models
 
 ```{r size = "tiny"}
 do(1) * lm(width ~ length, data = KidsFeet)
-do(3) * lm( width ~ shuffle(length), data = KidsFeet)
+do(3) * lm(width ~ shuffle(length), data = KidsFeet)
 ```
 
 Randomization and linear models
@@ -830,8 +895,8 @@ Randomization and linear models
 =================================
 ```{r fig.width = 8, fig.height = 3, out.width = 800, out.height = 300}
 Null <- do(5000) * 
-  lm( width ~ length + shuffle(sex), 
-                       data = KidsFeet)
+  lm(width ~ length + shuffle(sex), 
+                      data = KidsFeet)
 histogram( ~ sexG, data = Null, 
            v = -0.2325, glwd = 4)
 ```
@@ -839,8 +904,8 @@ histogram( ~ sexG, data = Null,
 Randomization and linear models
 =================================
 ```{r fig.width = 8, fig.height = 3, out.width = 800, out.height = 300}
-histogram(~sexG, data = Null, 
+histogram(~ sexG, data = Null, 
            v = -0.2325, glwd = 4)
-prop(~ (sexG <= -0.2325), data = Null)
+prop1(~ (sexG <= -0.2325), data = Null)
 ```
 
