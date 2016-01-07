@@ -1,7 +1,7 @@
 Less Volume, More Creativity
 =============================
 author: Teaching Statistics with R and RStudio 
-date: JMM 2015 Minicourse
+date: JMM 2016 Minicourse
 transition: fade
 
 <!--
@@ -26,7 +26,7 @@ border:0px;
 }
 </style>
 
-Project MOSAIC and the `mosaic` package
+Project MOSAIC and the mosaic package
 ===========================
 
 NSF-funded project to develop a new way to introduce mathematics, statistics, computation 
@@ -35,7 +35,7 @@ and modeling to students in colleges and universities.
  * more information at [mosaic-web.org](http://mosaic-web.org)
  
  * the `mosaic` package is available via 
-     * [CRAN](http://cran.r-project.org/web/packages/mosaic/index.html)
+     * [CRAN](http://cran.r-project.org/package=mosaic)
      * [github](https://github.com/rpruim/mosaic) 
          * updates more frequently than CRAN
          * beta branch for developing new features
@@ -57,6 +57,12 @@ is great.
    * no need to know HTML, LateX or Word
    
    * but if you do, you can take advantage
+
+Less Volume, More Creativity
+================================
+type: section
+
+A guiding philosphy
 
 Less Volume, More Creativity
 ================================
@@ -82,21 +88,25 @@ Mike McCarthy, Head Coach, Green Bay Packers
 </tr>
 </table>
 
-                                          
-SIBKIS: See It Big, Keep It Simple
-=======================
+Less Volume, More Creativity
+=============================
 
-<table>
-<tr>
-<td>
-Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away. 
+
+<table><tr align="top"><td width="20%" align="top">
+<img src="../../images/MikeMcCarthy.jpg" align="top" width="200"></td>
+<td align="top"> 
+<strong>Q.</strong> How many offensive and defensive plays might you have coming into a game on average?
 <br><br>
---- Antoine de Saint-Exupery (writer, poet, pioneering aviator)
+<strong>A.</strong> That's an excellent question because years ago when I first got into 
+the NFL we had 150 passes in our game plan. I've put a sign on all of the coordinators' doors -- <strong>Less Volume, More Creativity</strong>. 
+We function with more concepts with less volume. 
+We're more around 50 (passes) in a game plan [now].
+<br><br>
+Mike McCarthy, Head Coach, Green Bay Packers 
 </td>
-<td width="20%"> 
-<img src="../../images/SaintExupery.jpg">
 </tr>
 </table>
+
 
 Less Volume, More Creativity
 =================
@@ -127,35 +137,74 @@ by
 * The Minimal R goal
 
 Note: We treat R as a language, but **not a programming language**: 
-* R is a way to communicate to the computer
+* R is a way to communicate with the computer
+
+                                          
+SIBKIS: See It Big, Keep It Simple
+=======================
+
+<table>
+<tr>
+<td>
+Perfection is achieved, not when there is nothing more to add, but when there is nothing left to take away. 
+<br><br>
+--- Antoine de Saint-Exupery (writer, poet, pioneering aviator)
+</td>
+<td width="20%"> 
+<img src="../../images/SaintExupery.jpg">
+</tr>
+</table>
+
+An Introduction to RStudio
+====================
+type: section
+
+Before continuing, let's get acquainted with RStudio's 
+panes and tabs.
 
 A few little details
 ====================
 
 ### R is case sensitive
  * many students are *not* case sensitive
+ 
+### Amount of white space doesn't matter
+  * Use white space liberally to make code clearer
 
 ### Arrows and Tab
  * up/down arrows scroll through history
  * TAB completion can simplify typing
 
-### If all else fails, try ESC
+### If all else fails, use ESC to get back to command prompt
  * If you see a + prompt, it means R is waiting for more input
  * If this is unintentional, you probably have a typo
- * ESC will get you pack to the command prompt
 
-Make sure the mosaic and mosaicData packages are loaded
+The Most Important Template
+===========================
+type: section
+
+Make sure the mosaic package is loaded
 =======================================================
 
- * happens automatically on our RStudio server
- * use checkboxes in Packages tab to load/unload packages
- * packages can also be loaded from the command line
+ * happens **automatically on our RStudio server**
+ * use **checkboxes in Packages tab** to load/unload packages
+ * packages can also be loaded from the **command line**
  
 
 ```r
-require(mosaic)
-require(mosaicData)
+require(mosaic)  
 ```
+
+
+<br>
+Note: R purists might prefer 
+
+
+```r
+library(mosaic)
+```
+
+but `require()` is easier for novices to remember.
 
 The Most Important Template
 ===============================
@@ -231,11 +280,11 @@ goal( formula , data = mydata )
 
 How do we make this plot?
 =========================
-<img src="LessVolume-figure/unnamed-chunk-5-1.png" title="plot of chunk unnamed-chunk-5" alt="plot of chunk unnamed-chunk-5" width="800" height="400" style="display: block; margin: auto;" />
+<img src="LessVolume-figure/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="800" height="400" style="display: block; margin: auto;" />
 
 How do we make this plot?
 =========================
-<img src="LessVolume-figure/unnamed-chunk-6-1.png" title="plot of chunk unnamed-chunk-6" alt="plot of chunk unnamed-chunk-6" width="60%" height="35%" style="display: block; margin: auto;" />
+<img src="LessVolume-figure/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="60%" height="35%" style="display: block; margin: auto;" />
 
 ### What is the Goal?
 
@@ -248,7 +297,7 @@ How do we make this plot?
 
 How do we make this plot?
 =========================
-<img src="LessVolume-figure/unnamed-chunk-7-1.png" title="plot of chunk unnamed-chunk-7" alt="plot of chunk unnamed-chunk-7" width="60%" height="35%" style="display: block; margin: auto;" />
+<img src="LessVolume-figure/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="60%" height="35%" style="display: block; margin: auto;" />
 
 ### What is the Goal?
 
@@ -261,7 +310,7 @@ How do we make this plot?
 
 How do we tell R to make this plot?
 =========================
-<img src="LessVolume-figure/unnamed-chunk-8-1.png" title="plot of chunk unnamed-chunk-8" alt="plot of chunk unnamed-chunk-8" width="60%" height="35%" style="display: block; margin: auto;" />
+<img src="LessVolume-figure/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="60%" height="35%" style="display: block; margin: auto;" />
 ### What is the Goal?
 
 * a scatter plot (`xyplot()`)
@@ -284,19 +333,19 @@ How do we make this plot?
 xyplot( births ~ date, data = Births78) 
 ```
 
-<img src="LessVolume-figure/unnamed-chunk-9-1.png" title="plot of chunk unnamed-chunk-9" alt="plot of chunk unnamed-chunk-9" width="800" height="400" style="display: block; margin: auto;" />
+<img src="LessVolume-figure/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="800" height="400" style="display: block; margin: auto;" />
 
 Your turn: How do you make this plot?
 =========
 
-<img src="LessVolume-figure/unnamed-chunk-10-1.png" title="plot of chunk unnamed-chunk-10" alt="plot of chunk unnamed-chunk-10" width="800" height="300" />
+<img src="LessVolume-figure/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" width="800" height="300" />
 
 ### Two Questions?
 
 Your turn: How do you make this plot?
 =========
 
-<img src="LessVolume-figure/unnamed-chunk-11-1.png" title="plot of chunk unnamed-chunk-11" alt="plot of chunk unnamed-chunk-11" width="800" height="300" />
+<img src="LessVolume-figure/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="800" height="300" />
 
 1. Command: <code>bwplot()</code>
 
@@ -314,12 +363,12 @@ Your turn: How do you make this plot?
 bwplot( age ~ substance, data = HELPrct)
 ```
 
-<img src="LessVolume-figure/unnamed-chunk-12-1.png" title="plot of chunk unnamed-chunk-12" alt="plot of chunk unnamed-chunk-12" width="800" height="300" />
+<img src="LessVolume-figure/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" width="800" height="300" />
 
 Your turn: How about this one?
 =========
 
-<img src="LessVolume-figure/unnamed-chunk-13-1.png" title="plot of chunk unnamed-chunk-13" alt="plot of chunk unnamed-chunk-13" width="800" height="300" />
+<img src="LessVolume-figure/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" width="800" height="300" />
 
 1. Command: <code>bwplot()</code>
 
@@ -335,7 +384,7 @@ Your turn: How about this one?
 bwplot( substance ~ age, data = HELPrct )
 ```
 
-<img src="LessVolume-figure/unnamed-chunk-14-1.png" title="plot of chunk unnamed-chunk-14" alt="plot of chunk unnamed-chunk-14" width="800" height="300" />
+<img src="LessVolume-figure/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="800" height="300" />
 
 
 Graphical Summaries: One Variable
@@ -345,7 +394,7 @@ Graphical Summaries: One Variable
 histogram( ~ age, data = HELPrct) 
 ```
 
-<img src="LessVolume-figure/unnamed-chunk-15-1.png" title="plot of chunk unnamed-chunk-15" alt="plot of chunk unnamed-chunk-15" width="800" height="400" style="display: block; margin: auto;" />
+<img src="LessVolume-figure/unnamed-chunk-16-1.png" title="plot of chunk unnamed-chunk-16" alt="plot of chunk unnamed-chunk-16" width="800" height="400" style="display: block; margin: auto;" />
 
 Note: When there is **one variable** it is on 
 the **right side** of the formula.
@@ -356,12 +405,13 @@ Graphical Summaries: Overview
 ### One Variable
 
 ```r
-  histogram( ~age, data = HELPrct ) 
-densityplot( ~age, data = HELPrct ) 
-     bwplot( ~age, data = HELPrct ) 
-     qqmath( ~age, data = HELPrct ) 
-freqpolygon( ~age, data = HELPrct ) 
-   bargraph( ~sex, data = HELPrct )
+  histogram( ~ age, data = HELPrct) 
+densityplot( ~ age, data = HELPrct) 
+     bwplot( ~ age, data = HELPrct) 
+     qqmath( ~ age, data = HELPrct) 
+freqpolygon( ~ age, data = HELPrct) 
+    ashplot( ~ age, data = HELPrct)
+   bargraph( ~ sex, data = HELPrct)
 ```
 
 ### Two Variables
@@ -433,7 +483,7 @@ densityplot( ~ age | sex, data = HELPrct,
                auto.key = TRUE)   
 ```
 
-<img src="LessVolume-figure/unnamed-chunk-21-1.png" title="plot of chunk unnamed-chunk-21" alt="plot of chunk unnamed-chunk-21" width="800" height="400" style="display: block; margin: auto;" />
+<img src="LessVolume-figure/unnamed-chunk-22-1.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" width="800" height="400" style="display: block; margin: auto;" />
 
 
 Bells & Whistles
@@ -464,7 +514,7 @@ xyplot( births ~ date, data = Births78,
     superpose.line = list( lty = 1 ) ))
 ```
 
-<img src="LessVolume-figure/unnamed-chunk-22-1.png" title="plot of chunk unnamed-chunk-22" alt="plot of chunk unnamed-chunk-22" width="800" height="300" style="display: block; margin: auto;" />
+<img src="LessVolume-figure/unnamed-chunk-23-1.png" title="plot of chunk unnamed-chunk-23" alt="plot of chunk unnamed-chunk-23" width="800" height="300" style="display: block; margin: auto;" />
 
 
 ====
@@ -496,7 +546,7 @@ histogram( ~ age, data = HELPrct )
 [1] 35.65342
 ```
 
-<img src="LessVolume-figure/unnamed-chunk-24-1.png" title="plot of chunk unnamed-chunk-24" alt="plot of chunk unnamed-chunk-24" width="800" height="300" />
+<img src="LessVolume-figure/unnamed-chunk-25-1.png" title="plot of chunk unnamed-chunk-25" alt="plot of chunk unnamed-chunk-25" width="800" height="300" />
 
 Other Summaries
 ===
@@ -639,11 +689,17 @@ bwplot( age ~ sex, data = HELPrct )
  36.2523364  -0.7841284 
 ```
 
+A Sampler of Some Other Things
+===========
+type: section
+
 Some other things
 =================
+
 The `mosaic` package includes some other things, too
- * Data sets (you've already seen some of them)
- * xtras: `xchisq.test()`, `xpnorm()`, `xqqmath()`
+ * **Data sets** (you've already seen some of them)
+ * support for **simulation based inference** (`do()`)
+ * **xtras**: `xchisq.test()`, `xpnorm()`, `xqqmath()`
  * `mplot()` 
    * `mplot(HELPrct)` interactive plot creation
    * replacements for `plot()` in some situations
@@ -665,7 +721,7 @@ If X ~ N(500,100), then
 	P(X >  700) = P(Z >  2) = 0.0228
 ```
 
-<img src="LessVolume-figure/unnamed-chunk-35-1.png" title="plot of chunk unnamed-chunk-35" alt="plot of chunk unnamed-chunk-35" width="800" height="300" />
+<img src="LessVolume-figure/unnamed-chunk-36-1.png" title="plot of chunk unnamed-chunk-36" alt="plot of chunk unnamed-chunk-36" width="800" height="300" />
 
 ```
 [1] 0.9772499
@@ -688,7 +744,7 @@ If X ~ N(500,100), then
  	P(X >  700) = P(Z >  2) = 0.0228
 ```
 
-<img src="LessVolume-figure/unnamed-chunk-36-1.png" title="plot of chunk unnamed-chunk-36" alt="plot of chunk unnamed-chunk-36" width="800" height="300" />
+<img src="LessVolume-figure/unnamed-chunk-37-1.png" title="plot of chunk unnamed-chunk-37" alt="plot of chunk unnamed-chunk-37" width="800" height="300" />
 
 ```
 [1] 0.02275013 0.97724987
@@ -777,14 +833,19 @@ plotFun( Width(length, sex = "G") ~ length,
          col = 2, add = TRUE)
 ```
 
-<img src="LessVolume-figure/unnamed-chunk-41-1.png" title="plot of chunk unnamed-chunk-41" alt="plot of chunk unnamed-chunk-41" width="800" height="300" />
+<img src="LessVolume-figure/unnamed-chunk-42-1.png" title="plot of chunk unnamed-chunk-42" alt="plot of chunk unnamed-chunk-42" width="800" height="300" />
 
 
 
-Resampling -- You can do() it!
+Simulation-Based Inference with mosaic
+===============
+type: section
+
+<large>You can do() it!</large>
+
+
+The Lady Tasting Tea
 ==============================
-
-## Lady Tasting Tea
 
  * Often used on first day of class
  
@@ -794,7 +855,10 @@ Resampling -- You can do() it!
    has been poured into tea or vice versa.
    
    * Question: How do we test this claim?
-   
+
+ * Can replace with any test of a proportion 
+ 
+   * fair coin, Dorris and Buzz, multiple-choice guessing, ESP, ...
 
 
 
@@ -872,7 +936,7 @@ head(Ladies, 1)
 histogram( ~ heads, data = Ladies, width = 1 )
 ```
 
-<img src="LessVolume-figure/unnamed-chunk-48-1.png" title="plot of chunk unnamed-chunk-48" alt="plot of chunk unnamed-chunk-48" width="800" height="300" />
+<img src="LessVolume-figure/unnamed-chunk-49-1.png" title="plot of chunk unnamed-chunk-49" alt="plot of chunk unnamed-chunk-49" width="800" height="300" />
 
 How often does guessing score 9 or 10?
 =============================================
@@ -969,19 +1033,28 @@ Example: Do mean ages differ by sex?
 
 
 ```r
-prop( ~(abs(diffmean) > 0.7841), data = Null )
+2 * prop( ~ (diffmean <= -0.7841), data = Null)
 ```
 
 ```
   TRUE 
-0.3616 
+0.3588 
 ```
 
 ```r
-histogram(~ diffmean, data = Null, v = -.7841) 
+2 * prop1( ~ (diffmean <= -0.7841), data = Null)
 ```
 
-<img src="LessVolume-figure/unnamed-chunk-53-1.png" title="plot of chunk unnamed-chunk-53" alt="plot of chunk unnamed-chunk-53" width="800" height="300" />
+```
+     TRUE 
+0.3591282 
+```
+
+```r
+histogram( ~ diffmean, data = Null, v = -.7841) 
+```
+
+<img src="LessVolume-figure/unnamed-chunk-54-1.png" title="plot of chunk unnamed-chunk-54" alt="plot of chunk unnamed-chunk-54" width="800" height="300" />
 
 Example:  Bootstrap for difference in means
 ========================================
@@ -989,19 +1062,19 @@ Example:  Bootstrap for difference in means
 
 ```r
 Bootstrap <- do(5000) * 
-  diffmean(age~sex, data= resample(HELPrct))
+  diffmean(age ~ sex, data= resample(HELPrct))
 
-histogram( ~diffmean, data = Bootstrap, 
+histogram( ~ diffmean, data = Bootstrap, 
                       v = -.7841, glwd = 4 )
 ```
 
-<img src="LessVolume-figure/unnamed-chunk-54-1.png" title="plot of chunk unnamed-chunk-54" alt="plot of chunk unnamed-chunk-54" width="800" height="300" />
+<img src="LessVolume-figure/unnamed-chunk-55-1.png" title="plot of chunk unnamed-chunk-55" alt="plot of chunk unnamed-chunk-55" width="800" height="300" />
 
 Example:  CI for difference in mean ages
 ========================================
 
 ```r
-cdata(~diffmean, data = Bootstrap, p = .95)
+cdata( ~ diffmean, data = Bootstrap, p = .95)
 ```
 
 ```
@@ -1044,7 +1117,7 @@ do(1) * lm(width ~ length, data = KidsFeet)
 ```
 
 ```r
-do(3) * lm( width ~ shuffle(length), data = KidsFeet)
+do(3) * lm(width ~ shuffle(length), data = KidsFeet)
 ```
 
 ```
