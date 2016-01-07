@@ -2,26 +2,30 @@
 title: 'Welcome to Minicourse #15'
 author: "Teaching Statistics with R and RStudio"
 date: "January, 2016"
-output: ioslides_presentation
+output: 
+  ioslides_presentation:
+    widescreen: true
+  
 ---
 
 ## Welcome to Minicourse 15
 
 ### **Minicourse Web Page**
 
-  * [mosaic-web.org/from-meetings-workshops/jmm-2016-minicourse/](http://mosaic-web.org/from-meetings-workshops/jmm-2016-minicourse/)
+  * [http://mosaic-web.org/from-meetings-workshops/jmm-2016-mini-course/](http://mosaic-web.org/from-meetings-workshops/jmm-2016-mini-course/)
 
 ### **While we are waiting...**
 
   * **Introduce yourself** to your neighbor(s).
  
-    * If you are an R novice and both of your nearest neighbors are R novices too, one of you should move.
- 
-    * If you are quite comfortable with R and both of your nearest neighbors are too, one of you should move.
+    
 
   * **Try out the FREE INTERNET** and login to the RStudio server
      -- [rstudio.calvin.edu](rstudio.calvin.edu) --
      I have a username and password for you.
+     
+    * Sheraton-Seattle-Meeting-Room
+    * METROA3
 
 
 
