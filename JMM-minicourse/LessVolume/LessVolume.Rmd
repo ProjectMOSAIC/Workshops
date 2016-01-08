@@ -5,6 +5,7 @@ date: "JMM 2016"
 output:
   slidy_presentation: default
   ioslides_presentation:
+    highlight: kate
     widescreen: yes
 ---
 
