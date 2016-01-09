@@ -41,7 +41,20 @@ output:
     * An approach that can be used in other contexts as well
    
   4. Creating documents with R Markdown (if time)
+
+
+## Outline of Day 2
+
+  1. Welcome Back
+  
+  2. Using Your Own Data
  
+  3. Intro to RMarkdown
+   
+  4. Simulation-Based Inference 
+  
+  5. Questions/Discussion/Wrap-Up/Evaluations
+  
 ## Other SIGMAA Stat Ed Stuff...
 
 ### **Contributed Paper Sessions** -- *Yakima 1*
