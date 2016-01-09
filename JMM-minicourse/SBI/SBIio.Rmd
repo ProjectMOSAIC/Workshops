@@ -3,13 +3,13 @@ title: "Simulation-Based Inference"
 author: "R Pruim"
 date: "JMM 2016"
 output:
+  slidy_presentation:
+    highlight: pygments
+    smart: no
   ioslides_presentation:
     highlight: haddock
     widescreen: yes
   beamer_presentation: default
-  slidy_presentation:
-    highlight: pygments
-    smart: no
 ---
 
 ## Simulation-Based Inference with mosaic
